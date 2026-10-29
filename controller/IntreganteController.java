@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.net.URI;
 
 import model.Intregante;
 import view.FormularioIntregante;
@@ -46,17 +47,17 @@ public class IntreganteController {
             return;
         }
 
-
         int indiceProyecto = vista.getIndiceProyectoCurricular();
-        if (indiceProyecto < 0) {
-            vista.mostrarError("Seleccione un proyecto curricular.");
-            return;
-        }
-
+      
         try {
             Intregante intregante = new Intregante(vista.getNombre(),vista.getApellido(),vista.getRepositorio(),vista.isEstudianteNuevo(),(byte) (indiceProyecto + 1));
-            intregantes.add(intregante);
-            vista.mostrarMensaje("El estudiante se registró correctamente.");
+            if(esURLValida(vista.getRepositorio())) {
+            	intregantes.add(intregante);
+            	vista.mostrarMensaje("El estudiante se registró correctamente.");
+            }else {
+            	vista.mostrarError("El URL del repo no es valido");
+            	return;
+            }   
         } catch (IllegalArgumentException error) {
             vista.mostrarError("No fue posible registrar al estudiante: " + error.getMessage());
         }
@@ -64,7 +65,7 @@ public class IntreganteController {
 
     /**Muestra los datos de todos los intregantes registrados*/
     private void consultarIntregantes() {
-        if (intregantes.isEmpty()) {
+        if (intregantes.isEmpty()) {//manejo del error por si no hay intregantes inscritos
             vista.mostrarMensaje("Todavía no hay estudiantes registrados.");
             return;
         }
@@ -87,5 +88,17 @@ public class IntreganteController {
     /**Regresa desde la consulta al formulario de registro*/
     private void volverAlMenu() {
         vista.mostrarFormulario();
+    }
+    
+    private boolean esURLValida(String texto) {
+        try {
+            URI url = new URI(texto);
+
+            return (url.getScheme().equals("http")|| url.getScheme().equals("https"))//que contenga http o https
+                    && url.getHost() != null //host diferente a nulo el host es por ejemplo github.com
+                    && url.getHost().contains(".");// y que el host conga un punto
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
