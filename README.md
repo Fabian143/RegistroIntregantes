@@ -68,10 +68,13 @@ La aplicación realiza lo siguiente:
 
 ## Capturas de pantalla
 
-A continuación se deja un espacio para 4 capturas de pantalla del sistema. Puedes reemplazarlas por imágenes reales cuando las tengas disponibles.
+ Puedes reemplazarlas por imágenes reales cuando las tengas disponibles.
 
-| Captura 1 | Captura 2 |
+
 | <img width="603" height="405" alt="image" src="https://github.com/user-attachments/assets/12eb7628-de3e-4c8d-8be3-050b916f314e" />
+
+<img width="604" height="431" alt="image" src="https://github.com/user-attachments/assets/46756525-0b8c-4246-8020-c9da818ffd70" />
+
 |
 | [Espacio para captura: formulario principal] | [Espacio para captura: registro exitoso] |
 
