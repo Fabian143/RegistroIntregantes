@@ -11,7 +11,6 @@ public class IntreganteController {
     }
 
     public void registrarIntregante() {
-        Intregante integrante = vista.obtenerDatos();
-        System.out.println("Intregante registrado: " + integrante);
+    	
     }
 }
