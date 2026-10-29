@@ -1,5 +1,5 @@
 # Registro de Intregantes
-El repositorio tiene dirección url https://github.com/Fabian143/RegistroIntregantes/edit/main/README.md
+El repositorio tiene dirección url https://github.com/Fabian143/RegistroIntregantes
 
 ## Objetivo
 
