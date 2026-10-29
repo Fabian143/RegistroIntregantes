@@ -14,16 +14,23 @@ public class Intregante {
 
     //variables necesesaria para seleccionar el proyecto curricular de un estudiante
     private byte seleccionadorCarrera;
-    private static String[] proyectoEducativo={"Ingeniería de sistemas","Ingeniería indrustial","Ingeniería electrica","Ingenieria electronica","Ingenieria civil"};
+    private static String[] proyectoEducativo={"Ingeniería de sistemas","Ingeniería industrial","Ingeniería electrica","Ingenieria electronica","Ingenieria civil"};
     private String proyectoCurricular;
 
     /** Constructor con las variables principlaes y algo que selecciona de los arreglos fijos */
     public Intregante(String nombre, String apellido,String repositorio,boolean estudianteNuevo,byte seleccionadorCarrera){
+    	
+        if (seleccionadorCarrera < 1 || seleccionadorCarrera > proyectoEducativo.length) {//Manejo de error para seleccionador de carrera este es más para el programador que para el usuario
+            throw new IllegalArgumentException("El proyecto curricular seleccionado no es válido.");
+        }
+
         this.nombre = nombre;
         this.apellido = apellido;
         this.repositorio = repositorio;
-        setTipoEstudiante(estudianteNuevo);
-        setProyectoCurricular(seleccionadorCarrera);
+        this.estudianteNuevo = estudianteNuevo;
+        this.tipoEstudiante = estudianteNuevo ? TipoEstudiante[0] : TipoEstudiante[1];
+        this.seleccionadorCarrera = seleccionadorCarrera;
+        this.proyectoCurricular = proyectoEducativo[seleccionadorCarrera - 1];
     }
 
     public String getNombre() {
@@ -48,6 +55,7 @@ public class Intregante {
     
     /**Le asigna un valor al tipo de estudiante salido del arreglo fijo apartir de un booleano */
     public void setTipoEstudiante(boolean esNuevo){
+        this.estudianteNuevo = esNuevo;
         if(esNuevo){
             this.tipoEstudiante=TipoEstudiante[0];
         }else{
@@ -58,8 +66,14 @@ public class Intregante {
     public String getProyectoCurricular(){
         return proyectoCurricular;
     }
+    
     /**Se le asigna un valor al proyecto curricular apartir del arreglo fijo*/
     public void setProyectoCurricular(byte s){
+        if (s < 1 || s > proyectoEducativo.length) {
+            throw new IllegalArgumentException("El proyecto curricular seleccionado no es válido.");
+        }
+
+        this.seleccionadorCarrera = s;
         switch(s){
             case 1 -> this.proyectoCurricular= proyectoEducativo[0];
             case 2 -> this.proyectoCurricular= proyectoEducativo[1];
@@ -91,7 +105,7 @@ public class Intregante {
 	}
 
 	public void setEstudianteNuevo(boolean estudianteNuevo) {
-		this.estudianteNuevo = estudianteNuevo;
+		setTipoEstudiante(estudianteNuevo);
 	}
     
 
