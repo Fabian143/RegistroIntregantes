@@ -68,19 +68,21 @@ La aplicación realiza lo siguiente:
 
 ## Capturas de pantalla
 
- Puedes reemplazarlas por imágenes reales cuando las tengas disponibles.
 
 
-| <img width="603" height="405" alt="image" src="https://github.com/user-attachments/assets/12eb7628-de3e-4c8d-8be3-050b916f314e" />
+<img width="603" height="405" alt="image" src="https://github.com/user-attachments/assets/12eb7628-de3e-4c8d-8be3-050b916f314e" />
+
+
 
 <img width="604" height="431" alt="image" src="https://github.com/user-attachments/assets/46756525-0b8c-4246-8020-c9da818ffd70" />
 
-|
-| [Espacio para captura: formulario principal] | [Espacio para captura: registro exitoso] |
 
-| Captura 3 | Captura 4 |
-| --- | --- |
-| [Espacio para captura: consulta de estudiantes] | [Espacio para captura: validación de URL o cierre de ventana] |
+
+<img width="596" height="401" alt="image" src="https://github.com/user-attachments/assets/a8964cd0-dfa5-4941-b2ac-6027ff1baf82" />
+
+
+
+<img width="602" height="406" alt="image" src="https://github.com/user-attachments/assets/83fd8ca4-d4ca-46c4-b0bb-234030b21317" />
 
 ## Nota
 
